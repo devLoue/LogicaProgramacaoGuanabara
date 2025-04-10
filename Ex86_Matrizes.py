@@ -15,10 +15,16 @@ print(matriz[1])
 print(matriz[2])'''
 
 #solução do guanabara
+#matriz = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
 
-matriz = [[0,0,0], [0,0,0], [0,0,0]]
-for l in range(0,3):
-    for c in range(0,3):
+for l in range(0,4):
+    for c in range(0,4):
+        print(l, c)
+        
+
+
+
+"""for l in range(0,4):
+    for c in range(0,4):
         matriz[l][c] = int(input(f'Digite um valor para {[l,c]}'))
-        print(matriz)
-print('final', matriz)
+print('final', matriz)"""

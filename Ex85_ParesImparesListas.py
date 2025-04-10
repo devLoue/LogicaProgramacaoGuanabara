@@ -1,55 +1,37 @@
-# Exercício Python 085: Crie um programa onde o usuário possa digitar sete valores numéricos e cadastre-os em uma lista única que mantenha separados os valores pares e ímpares. No final, mostre os valores pares e ímpares em ordem crescente.
+#Exercício Python 085: Crie um programa onde o usuário possa digitar sete valores numéricos e cadastre-os em uma lista única que mantenha separados os valores pares e ímpares.
+#No final, mostre os valores pares e ímpares em ordem crescente.
 
-#solucao 1
-'''par = []
-impar = []
 
-print('Digite alguns valores e eu os separarei por par ou impar.')
-while True:
-    n = int(input('Digite um valor:'))
-    if n % 2 == 0:
-        par.append(n)
-    else:
-        impar.append(n)
-    decisao = str(input('Deseja adicionar outro número? [S/N]')).strip().upper()[0]
-    if decisao == 'N':
-        break
-    while decisao not in 'SN':
-        decisao = str(input('Deseja adicionar outro número? [S/N]')).strip().upper()[0]
-print(f'Lista de números pares: {par}')
-print(f'Lista de números ímpares: {impar}')
-par.sort()
-print(f'Lista de números pares em ordem crescente: {par}')
-par.sort(reverse=True)
-print(f'Lista de números pares em ordem decrescente: {par}') '''
+#Solucao 1: 
+"""inteiros = []
+temporaria = []
+pares = []
+impares = []
 
-#solucao2
-''' numeros = []
-par2= []
-impar2 = []
+for i in range (1, 8):
+    temporaria.append(int(input('Digite um número inteiro:')))
+for valor in temporaria:
+    if valor % 2 ==0:
+        pares.append(valor)
+    elif valor % 2 ==1:
+        impares.append(valor)
+inteiros.append(impares)
+inteiros.append(pares)
+impares.sort()
+pares.sort()
+print(f'Números digitados: {temporaria} \nImpares em ordem crescente: {impares} \nPares em ordem crescente {pares}')"""
 
-for n in range (1,8):
-    numeros.append(int(input(f'digite o {n}o numero:')))
-print(numeros)
-for numero in numeros:
-    if numero % 2 == 0:
-        par2.append(numero)
-    else:
-        impar2.append(numero)
-par2.sort()
-print('Lista de par em ordem crescente:', par2)
-impar2.sort()
-print('Lista de impar em ordem crescente:', impar2) '''
+# Solução2 (MAIS OTIMIZADA)
 
-numeros = [[], []]
-valor = 0
-for c in range (1, 8):
-    valor = int(input(f'Digite o {c}o valor'))
-    if valor % 2 == 0:
-        numeros[0].append(valor)
-    else:
-        numeros[1].append(valor)
-numeros[0].sort()
-print(f'Números pares em ordem crescente: {numeros[0]}')
-numeros[1].sort()
-print(f'Números impares em ordem crescente: {numeros[1]}')
+inteiros = [[], []]
+valortemporario = 0
+for i in range (0, 7):
+    valortemporario=int(input('Digite um número inteiro:'))
+    if valortemporario % 2 == 0:
+        inteiros[0].append(valortemporario)
+    elif valortemporario % 2 ==1:
+        inteiros[1].append(valortemporario)
+print(f'Todos os valores: {inteiros}')
+for pos, valor in enumerate(inteiros):
+    inteiros[pos].sort()
+print(f'Pares em ordem crescente: {inteiros[0]} \nImpares em ordem crescente{inteiros[1]}')

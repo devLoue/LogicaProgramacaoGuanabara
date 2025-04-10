@@ -1,5 +1,6 @@
 expressao = str(input('Digite a expressão desejada:'))
 lista = []
+
 for char in expressao: #para cada caracter digitado na expressão
     if char == '(': #se o caracter for igual ao ( parênteses abrindo
         lista.append('(') #coloque-o na lista, coloque o parentêses aberto na lista

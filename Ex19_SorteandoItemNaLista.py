@@ -2,9 +2,10 @@
 #Utilizando a biblioteca random para números aleatórios, vamos utilizar a função choice (escolha)
 
 from random import choice
-list = []
+list = ["PH", "Ebert", "Nelsin", "Caio", "V", "Guto", "Loue", "Kaua", "Julio"]
 for name in range (1,5):
-    list.append(input(f'Digite o {name} nome: '))
-print(f'O sorteado pelo professor foi {choice(list)}')
+    ##list.append(input(f'Digite o {name} nome: '))
+    print(f'O sorteado foi foi {choice(list)}')
+print(list);
 
  

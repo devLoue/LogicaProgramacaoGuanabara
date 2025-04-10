@@ -3,43 +3,38 @@
 #B) Uma listagem com as pessoas mais pesadas.
 #C) Uma listagem com as pessoas mais leves.
 
-listatemp = []
-ppesadas = []
-pleves = []
-listaprincipal = []
-totaldepessoas = 0
-#Iniciando o programa:
+listatemporaria = [] #Declarando uma lista "temporária"
+listafinal = [] #Declarando minha lista "Final"
+validador = " " #Validador com inicio vazio porém já declarado entre aspas pois vai receber um valor de string, "Deseja continuar S/N?"
+maiorpeso = 0 #Lista de pessoas mais pesadas 
+menorpeso = 0
+
 while True:
-    listatemp.append(str(input('Digite o nome: ')))
-    listatemp.append(float(input('Digite o seu peso: ')))
-    totaldepessoas = totaldepessoas + 1
-
-    #Adicionando o primeiro valor na lista de leves e de pesados:
-    if len(ppesadas) == 0:
-        ppesadas.append(listatemp[:])
-    if len(pleves) == 0:
-        pleves.append(listatemp[:])
-    # Adicionando cada valor a lista principal e depois limpando a temporária...
-    listaprincipal.append(listatemp[:])
-    listatemp.clear()
-
-    #Decisao se deseja cadastrar mais pessoas
-    decisao = str(input('Deseja continuar? [S/N] ')).strip().upper()[0]
-    while decisao not in 'SN':
-        decisao = str(input('Deseja continuar? [S/N] ')).strip().upper()[0]
-    if decisao == 'N':
+    listatemporaria.append(str(input('Qual é o seu nome? ')))
+    listatemporaria.append(float(input(f'Qual é o seu peso (em kg), {listatemporaria[0]}? ')))
+    listafinal.append(listatemporaria[:])
+    if maiorpeso == 0:
+        maiorpeso = listatemporaria[1]
+        menorpeso = listatemporaria[1]
+    else:
+        if listatemporaria[1] > maiorpeso:
+            maiorpeso = listatemporaria[1]
+        if listatemporaria[1] < menorpeso:
+            menorpeso = listatemporaria[1]
+    listatemporaria.clear()
+    validador = str(input('Deseja cadastrar outra pessoa? S/N ')).strip().upper()
+    while validador not in "SsNn":
+        validador = str(input('Opção inválida. \nDeseja cadastrar outra pessoa? S/N ')).strip().upper()
+    if validador in "N":
         break
-
-#Verificando os maiores valores da lista de pesados
-listaprincipal.pop(0)
-for pos, elemento in enumerate(listaprincipal):
-    if pos % 2 == 1:
-        if pos >= ppesadas[0][1]:
-            print(f'posição {pos} elemento {elemento}')
-            ppesadas.append(listaprincipal[pos])
-
-print('lista principal ',listaprincipal)
-print('lista dos pesados: ', ppesadas)
-print(f'Foram cadastradas {totaldepessoas} pessoas.')
-print(f'A pessoa mais pesada é {ppesadas[0][0]} com {ppesadas[0][1]} kg')
-print(f'A pessoa mais leve é {pleves[0][0]} com {pleves[0][1]} kg')
+    if validador in "S":
+        continue
+print(f'Cadastros feitos: {len(listafinal)}')
+print(f'O maior peso foi de {maiorpeso}kg. peso de ', end ='')
+for p in listafinal:
+    if p[1] == maiorpeso:
+        print(f'{p[0]} ', end ="")
+print(f'\nO menor peso foi de {menorpeso}kg peso de ', end='')
+for i in listafinal:
+    if i[1] == menorpeso:
+        print(f'{i[0]} ', end ="")

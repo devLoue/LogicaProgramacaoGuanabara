@@ -7,9 +7,9 @@ lista = []
 while True:
     n = int(input('Digite um valor a ser inserido na lista:'))
     lista.append(n)
-    decisao = str(input('Deseja continuar? [S/N] ')).strip().upper()[0]
+    decisao = str(input('Deseja adicionar outro valor? [S/N] ')).strip().upper()[0]
     if decisao not in 'SsNn':
-        decisao = str(input('Deseja continuar? [S/N]')).strip().upper()[0]
+        decisao = str(input('Deseja adicionar outro valor? [S/N]')).strip().upper()[0]
     if decisao == 'N':
         break
 print(f'Foram digitados {len(lista)} números')

@@ -1,4 +1,4 @@
-# incompleto
+""""# incompleto
 
 from random import randint
 print ('-'*30)
@@ -27,4 +27,5 @@ while total <= quantidade:
     #final do programa / exibição de resultado
 for l in jogos:
     print(f'jogo {contador}: {l}')
-    contador += 1
+    contador += 1 """
+

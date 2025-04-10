@@ -16,6 +16,6 @@ while True:
         decisao = str(input('Deseja continuar? [S/N]')).strip().upper()[0]
     if decisao == 'N':
         break
-print(lista)
+print(f'Valores digitados: {lista}')
 lista.sort() #altera a lista, enquanto sorted(lista) apenas apresenta a lista em ordem
-print(lista)
+print(f'Valores digitados em ordem crescente {lista}')
