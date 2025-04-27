@@ -20,8 +20,6 @@ print(matriz[2])'''
 for l in range(0,4):
     for c in range(0,4):
         print(l, c)
-        
-
 
 
 """for l in range(0,4):
