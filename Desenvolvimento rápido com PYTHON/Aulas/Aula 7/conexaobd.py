@@ -12,8 +12,9 @@ cursor = conexaobd.cursor()
 cursor.execute("SELECT * FROM EMPREGADO")
 retorno_dados = cursor.fetchall()
 for row in retorno_dados:
-    print(row)
+    print(f'id {row[0]}, nome {row[1]}, data de nascimento {row[2]}.' )
 
-
+print("Fechando cursor e fechando o banco...")
 cursor.close()
 conexaobd.close()
+
