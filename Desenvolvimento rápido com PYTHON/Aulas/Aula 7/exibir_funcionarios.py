@@ -1,5 +1,6 @@
 import pg8000
 
+#Fazendo a conexão com o banco na minha máquina local
 conexaobd = pg8000.connect(user="postgres",
                            password="123456",
                            host="localhost",
