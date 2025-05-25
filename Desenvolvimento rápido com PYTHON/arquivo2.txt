@@ -1,0 +1,7 @@
+'r'	Abre o arquivo para leitura (default).
+'w'	Abre o arquivo para escrita, truncando o arquivo primeiro.
+'x'	Cria um arquivo para escrita e falha, caso ele exista.
+'a'	Abre o arquivo para escrita, acrescentando conteúdo ao final do arquivo, caso ele exista.
+'b'	Modo binário.
+'t'	Modo texto (default).
+'+'	Abre o arquivo para atualização (leitura ou escrita).

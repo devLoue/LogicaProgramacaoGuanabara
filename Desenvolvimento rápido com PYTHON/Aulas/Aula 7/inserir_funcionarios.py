@@ -1,4 +1,4 @@
-import pg8000
+"""import pg8000
 #Definindo a função criar empregado, que na vdd é um insert into no Postgre
 
 
@@ -12,4 +12,4 @@ def inserir_empregado(matricula, nome_empregado, data_nasc):
 
 cursor.close()
 conexaobd.c
-
+"""
